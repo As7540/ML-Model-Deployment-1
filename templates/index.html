@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Loan eligibility Prediction</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link href="{{url_for('static', filename='style.css')}}" rel="stylesheet">
+    
+</head>
+
+<body>
+
+    <div class="jumbotron jumbotron-fluid  text-white text-center" style="background-color:dimgray;" >
+        <div class="container">
+            <h1 id="hea">Loan eligibility Prediction</h1>
+            <P class="lead py-2">
+                Please Fill the information bellow to get your loan prediction
+            </P>
+        </div>
+    </div>
+    </nav>
+    <section>
+        <div>
+
+        </div>
+        <div class="container text-center" id="prev">
+            <h2 class="display-6 text-center" style="color:red ;">{{result}}</h2>
+            <br>
+
+
+        </div>
+        <br>
+        <div class="container mb-3 py-6">
+            <div>
+                <h6 style="color:red">**Please fill all the required parameters </h6>
+            </div>
+            <form method="POST" action="/predict">
+                <div class="form-group">
+                    <label for="AvailableBankcardCredit"><h5>1-Enter your Available Bankcard Credit  </h5></label>
+                    <input type="AvailableBankcardCredit" class="form-control" style="width:470px;" id="AvailableBankcardCredit" name="AvailableBankcardCredit" placeholder="IN DOLLARS"
+                           required>
+                </div>
+                <div class="form-group">
+                    <label for="EmploymentStatus"><h5>2-What is your Employment status  </h5></label>
+                    <ul>
+                        <li>0 for unemployed</li>
+                        <li>1 for employed</li>
+                    </ul>
+                    <input type="EmploymentStatus" class="form-control" style="width:470px;" id="EmploymentStatus" name="EmploymentStatus" placeholder="IN DOLLARS"
+                           required>
+                </div>
+                <div class="form-group">
+                    <label for="StatedMonthlyIncome"><h5>3-Enter your Monthly Income</h5></label>
+                    <input type="StatedMonthlyIncome" class="form-control" style="width:470px;" id="StatedMonthlyIncome" name="StatedMonthlyIncome" placeholder="IN DOLLARS"
+                           required>
+                </div>
+                <div class="form-group">
+                    <label for="IncomeVerifiable"><h5>4-Is your Income verifiable </h5></label>
+                    <ul>
+                        <li>0 for False</li>
+                        <li>1 for True</li>
+                    </ul>
+                    <input type="IncomeVerifiable" class="form-control" style="width:470px;" id="IncomeVerifiable" name="IncomeVerifiable" placeholder="IN DOLLARS"
+                           required>
+                </div>
+                <div class="form-group">
+                    <label for="LoanOriginalAmount"><h5>5-Enter the Loan Original Amount</h5></label>
+                    <input type="LoanOriginalAmount" class="form-control" style="width:470px;" id="LoanOriginalAmount" name="LoanOriginalAmount" placeholder="Example: 200000"
+                           required>
+                </div>
+                <div class="form-group">
+                    <label for="MonthlyLoanPayment"><h5>6-Enter your Monthly Loan Payment</h5></label>
+                    <input type="MonthlyLoanPayment" class="form-control" style="width:470px;" id="MonthlyLoanPayment" name="MonthlyLoanPayment" placeholder="Example: 1000"
+                           required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="LP_InterestandFees"><h5>7-Enter your interests and fees</h5></label>
+                    <input type="LP_InterestandFees" class="form-control" style="width:470px;" id="LP_InterestandFees" name="LP_InterestandFees" placeholder="IN DOLLORS"
+                           required>
+                </div>
+                
+                <center><button class="btn btn-primary" style="background-color:green ; border-color: green;" type="submit">Predict</button></center>
+            </form>
+        </div>
+    </section>
+    
+    <div class="jumbotron jumbotron-fluid  text-white text-center" style="background-color:dimgray;">
+        <h5 class='text-center'>&copy Technocolabs Softwares<h6 class="text-center">Data Scientists Interns</h6></h5>  
+        
+        <br>
+    </div>
+</body>
+
+</html>
